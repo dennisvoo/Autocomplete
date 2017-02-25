@@ -7,6 +7,14 @@
 #define DICTIONARY_HASHTABLE_H
 
 #include <string>
+#include <unordered_set>
+
+/* Author: Dennis Vo
+ * Date: 2/9/17
+ * Assignment: PA2
+ * Description: Header file for Dictionary implemented with a HashTable.
+ */
+
 
 /**
  *  The class for a dictionary ADT, implemented as a Hashtable
@@ -33,6 +41,7 @@ public:
 
 private:
   // Add your own data members and methods here
+  std::unordered_set<std::string> table;
 };
 
 #endif // DICTIONARY_HASHTABLE_H

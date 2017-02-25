@@ -9,14 +9,34 @@
 #include <vector>
 #include <string>
 
+/* Author: Dennis Vo
+ * Date: 2/9/17
+ * Assignment: PA2
+ * Description: Header file for Dictionary implementation using a ternary
+ *              search tree.
+ */
+
+
+/* Separate node class for implementing the trie. */
+class Node {
+public:
+  // ctor for ternary search tree node
+  bool isWord;
+  Node* left; Node* mid; Node* right;
+  std::string text;
+  std::string finalText; // contains entire word for a word node
+  unsigned int freq; // node class initialization used from discussion
+
+  Node();
+};
+
 /**
  *  The class for a dictionary ADT, implemented as a trie
  *  You may implement this class as either a mulit-way trie
  *  or a ternary search trie, but you must use one or the other.
  *
  */
-class DictionaryTrie
-{
+class DictionaryTrie {
 public:
 
   /* Create a new Dictionary that uses a Trie back end */
@@ -48,7 +68,18 @@ public:
   ~DictionaryTrie();
 
 private:
-  // Add your own data members and methods here
+  /* Pointer to root of trie */
+  Node* root;
+
+  /* Helper method to insert nodes onto trie */
+  Node* insertHelper(Node* node, std::string word, int ind, unsigned int freq);
+
+  /* Helper method to traverse down trie and find a word */
+  Node* findHelper(Node* node, std::string word, int ind) const;
+
+  /* Helper method that traverses down trie and deletes nodes. */
+  static void deleteAll(Node* n);
 };
+
 
 #endif // DICTIONARY_TRIE_H

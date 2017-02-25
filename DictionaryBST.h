@@ -3,10 +3,17 @@
  *  Authors: Jor-el Briones, Christine Alvarado
  */
 
+/* Author: Dennis Vo
+ * Date: 2/9/17
+ * Assignment: PA2
+ * Description: Header file for dictionary implemented using BST.
+ */
+
 #ifndef DICTIONARY_BST_H
 #define DICTIONARY_BST_H
 
 #include <string>
+#include <set>
 
 /**
  *  The class for a dictionary ADT, implemented as a BST
@@ -33,6 +40,7 @@ public:
 
 private:
   // Add your own data members and methods here
+  std::set<std::string> tree;
 };
 
 #endif // DICTIONARY_BST_H
