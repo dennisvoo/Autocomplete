@@ -4,3 +4,4 @@ The BST and Hash Table use a C++ set and unordered_set, respectively, so there i
 
 The TST Dictionary is implemented with an inner node class and also includes a auto complete function.
 This function takes a prefix and an integer and returns a vector of the specified number of words that begin with the prefix.
+The function performs a Breadth First Search on the Dictionary Trie to find the most frequent words.
